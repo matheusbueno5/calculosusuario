@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade com função</title>
+</head>
+<body>
+    <h1>Cálculos do usuário</h1>
+    <p>Cálculos feitos pelo usuário: <span id="resul"></span></p>
+    <script>
+        function calcular() {
+            let decisao = "1"; 
+            while (decisao == "1") {  
+                let valor1 = prompt("Digite o primeiro valor.");
+                let valor2 = prompt("Digite o segundo valor.");
+                let escolha = prompt("Digite a operação matemática que você deseja calcular os valores. \n1 - + (adição) \n2 - - (subtração) \n3 - * (multiplicação) \n4 - / (divisão)");
+                let resultado;
+                let operador;
+                switch (escolha) {
+                    case "1":
+                        resultado = valor1 + valor2;
+                        operador = "+"
+                        break;
+                    case "2":
+                        resultado = valor1 - valor2;
+                        operador = "-"
+                        break;
+                    case "3":
+                        resultado = valor1 * valor2;
+                        operador = "*"
+                        break;
+                    case "4":
+                        resultado = valor1 / valor2;
+                        operador = "/"
+                        break;
+                    default:
+                        resultado = "Operação Inválida";
+                        break;
+                }
+                document.getElementById("resul").innerHTML += "<br>" + valor1 + " " + operador + " " + valor2 + " " + " = " + resultado;
+                decisao = prompt("Você deseja fazer outro cálculo? \n1 - Sim \n2 - Não"); 
+            }
+        }
+        calcular();
+    </script>
+</body>
+</html>
